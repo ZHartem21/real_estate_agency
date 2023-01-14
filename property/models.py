@@ -7,7 +7,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class Flat(models.Model):
     new_building = models.BooleanField(null=True, blank=True)
-    liked_by = models.ManyToManyField(User, related_name='liked', verbose_name='Кто лайкнул', null=True, blank=True)
+    liked_by = models.ManyToManyField(User, related_name='liked_flats', verbose_name='Кто лайкнул', null=True, blank=True)
     created_at = models.DateTimeField(
         'Когда создано объявление',
         default=timezone.now,
