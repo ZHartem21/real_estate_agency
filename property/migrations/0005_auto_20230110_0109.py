@@ -6,6 +6,7 @@ from django.db import migrations
 def new_building_check_and_update(apps, schema_editor):
     Flat = apps.get_model('property', 'Flat')
     Flat.objects.filter(construction_year__gte=2015).update(new_building=True)
+    Flat.objects.filter(construction_year__lt=2015).update(new_building=False)
 
 
 class Migration(migrations.Migration):
